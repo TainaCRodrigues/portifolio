@@ -340,78 +340,6 @@
   .contact-link:hover { border-color: var(--accent); color: var(--accent); transform: translateX(4px); }
   .contact-icon { width: 32px; height: 32px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; }
 
-  /* DOCS SECTION */
-  #docs { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-  .docs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-  .doc-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 32px;
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    text-decoration: none;
-    color: var(--text);
-    transition: all 0.3s;
-    position: relative;
-    overflow: hidden;
-  }
-  .doc-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(124,106,255,0.06), transparent 60%);
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  .doc-card:hover::before { opacity: 1; }
-  .doc-card:hover {
-    border-color: rgba(124,106,255,0.4);
-    transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(0,0,0,0.35);
-  }
-  .doc-icon-wrap {
-    width: 60px; height: 60px;
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    flex-shrink: 0;
-  }
-  .doc-icon-cv { background: rgba(124,106,255,0.15); border: 1px solid rgba(124,106,255,0.25); }
-  .doc-icon-certs { background: rgba(56,189,248,0.12); border: 1px solid rgba(56,189,248,0.2); }
-  .doc-info { flex: 1; }
-  .doc-label {
-    font-size: 10px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 6px;
-  }
-  .doc-title {
-    font-family: 'Syne', sans-serif;
-    font-size: 20px;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-    margin-bottom: 6px;
-  }
-  .doc-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
-  .doc-arrow {
-    font-size: 20px;
-    color: var(--muted);
-    transition: all 0.3s;
-    flex-shrink: 0;
-  }
-  .doc-card:hover .doc-arrow { color: var(--accent); transform: translateX(4px); }
-
-  @media (max-width: 640px) {
-    .docs-grid { grid-template-columns: 1fr; }
-    .doc-card { padding: 22px; gap: 16px; }
-    .doc-icon-wrap { width: 48px; height: 48px; font-size: 22px; }
-    .doc-title { font-size: 17px; }
-  }
 
   footer {
     padding: 32px 40px;
@@ -514,7 +442,6 @@
     <li><a href="#projects" onclick="closeMenu()">Projetos</a></li>
     <li><a href="#experience" onclick="closeMenu()">Experiência</a></li>
     <li><a href="#education" onclick="closeMenu()">Formação</a></li>
-    <li><a href="#docs" onclick="closeMenu()">Docs</a></li>
     <li><a href="#contact" onclick="closeMenu()">Contato</a></li>
   </ul>
   <button class="nav-toggle" id="navToggle" aria-label="Menu">
@@ -546,11 +473,11 @@
       <div class="skill-card reveal"><div class="skill-icon">🌐</div><div class="skill-name">Desenvolvimento Web</div><div class="skill-desc">HTML, CSS — interfaces e aplicações web.</div></div>
       <div class="skill-card reveal"><div class="skill-icon">🐍</div><div class="skill-name">Python</div><div class="skill-desc">Lógica de programação e Programação Orientada a Objetos (classes, herança, encapsulamento). Atualmente estudando Django para desenvolvimento backend.</div></div>
       <div class="skill-card reveal"><div class="skill-icon">🎯</div><div class="skill-name">Django</div><div class="skill-desc">Framework backend em Python — estruturação de models, views e lógica de aplicação.</div></div>
+      <div class="skill-card reveal"><div class="skill-icon">⚡</div><div class="skill-name">FastAPI</div><div class="skill-desc">Desenvolvimento de APIs REST em Python — rotas, validação de dados e autenticação com JWT.</div></div>
       <div class="skill-card reveal"><div class="skill-icon">🗄️</div><div class="skill-name">Banco de Dados</div><div class="skill-desc">Fundamentos de banco de dados — em andamento.</div></div>
       <div class="skill-card reveal"><div class="skill-icon">🤖</div><div class="skill-name">IA Generativa</div><div class="skill-desc">Conhecimento em prompts, modelos generativos e aplicações práticas. Certificada em IA Generativa (Coursera) + soft skills.</div></div>
 
       <div class="skill-card reveal"><div class="skill-icon">⌨️</div><div class="skill-name">Terminal & Git</div><div class="skill-desc">Comandos Linux, Git e estrutura semântica.</div></div>
-      <div class="skill-card reveal"><div class="skill-icon">📄</div><div class="skill-name">Documentação</div><div class="skill-desc">Relatórios técnicos e docs para desenvolvimento de apps.</div></div>
     </div>
   </div>
 </section>
@@ -563,10 +490,10 @@
       <div class="project-card reveal">
         <div class="project-header">
           <div class="project-number">// 01 — Projeto Django</div>
-          <div class="project-title">Konsert</div>
-          <div class="project-desc">Site de gerenciamento de chamados para assistência técnica. Nela, clientes podem abrir chamados descrevendo problemas em seus equipamentos, enquanto técnicos visualizam, aceitam os chamados e elaboram orçamentos para o reparo.</div>
+          <div class="project-title">Pizzaria</div>
+          <div class="project-desc">Aplicação fullstack em Django para uma pizzaria. Cardápio de pizzas, carrinho de compras, pedidos online e gerenciamento de clientes, com front-end e back-end integrados.</div>
         </div>
-        <div class="project-tags"><span class="tag">Django</span><span class="tag">Python</span><span class="tag">Backend</span></div>
+        <div class="project-tags"><span class="tag">Django</span><span class="tag">Python</span><span class="tag">Fullstack</span></div>
         <div class="project-footer"><span class="badge-solo" style="background:rgba(56,189,248,0.1);border-color:rgba(56,189,248,0.2);color:var(--accent3);">◌ Em andamento</span><span class="project-link" style="pointer-events:none;">Em desenvolvimento</span></div>
       </div>
       <div class="project-card reveal">
@@ -580,11 +507,11 @@
       </div>
       <div class="project-card reveal">
         <div class="project-header">
-          <div class="project-number">// 03 — Projeto Django</div>
-          <div class="project-title">Sugar Buzz</div>
-          <div class="project-desc">Aplicação web em Django para venda de café e doces. Plataforma completa com catálogo de produtos, carrinho de compras, sistema de pedidos e gerenciamento de clientes.</div>
+          <div class="project-number">// 03 — Projeto FastAPI</div>
+          <div class="project-title">API FastAPI</div>
+          <div class="project-desc">Backend completo em FastAPI com autenticação e autorização via JWT. API REST com rotas protegidas, validação de dados e estrutura organizada para escalar.</div>
         </div>
-        <div class="project-tags"><span class="tag">Django</span><span class="tag">Python</span><span class="tag">E-commerce</span></div>
+        <div class="project-tags"><span class="tag">FastAPI</span><span class="tag">Python</span><span class="tag">JWT</span><span class="tag">Backend</span></div>
         <div class="project-footer"><span class="badge-solo" style="background:rgba(56,189,248,0.1);border-color:rgba(56,189,248,0.2);color:var(--accent3);">◌ Em andamento</span><span class="project-link" style="pointer-events:none;">Em desenvolvimento</span></div>
       </div>
       <div class="project-card reveal">
@@ -637,22 +564,6 @@
         <div class="edu-school">UNINASSAU — Graduação</div>
       </div>
     </div>
-  </div>
-</section>
-
-<section id="docs">
-  <div class="container">
-    <p class="section-label">Documentos</p>
-    <h2 class="section-title">Currículo</h2>
-    <a id="baixar-cv" href="curriculo_taina.pdf.pdf" download="curriculo_taina.pdf" class="doc-card reveal">
-      <div class="doc-icon-wrap doc-icon-cv">📄</div>
-      <div class="doc-info">
-        <div class="doc-label">Download</div>
-        <div class="doc-title">Currículo</div>
-        <div class="doc-desc">CV completo com experiências, formação e habilidades técnicas.</div>
-      </div>
-      <div class="doc-arrow">→</div>
-    </a>
   </div>
 </section>
 
@@ -722,36 +633,6 @@
   } else {
     allReveal.forEach(el => el.classList.add('visible'));
   }
-</script>
-<script>
-  // Forçar download do PDF mesmo quando o navegador tenta abrir em nova aba
-  (function(){
-    const cvLink = document.getElementById('baixar-cv');
-    if (!cvLink) return;
-    cvLink.addEventListener('click', function(e){
-      e.preventDefault();
-      const href = cvLink.getAttribute('href');
-      if (!href) return;
-      fetch(href).then(resp => {
-        if (!resp.ok) throw new Error('network');
-        return resp.blob();
-      }).then(blob => {
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.style.display = 'none';
-        a.href = url;
-        const filename = href.split('/').pop() || 'curriculo.pdf';
-        a.download = filename;
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        URL.revokeObjectURL(url);
-      }).catch(() => {
-        // fallback: navega para o arquivo (pode abrir em nova aba)
-        window.location.href = href;
-      });
-    });
-  })();
 </script>
 </body>
 </html>
